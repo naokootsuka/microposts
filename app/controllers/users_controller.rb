@@ -18,9 +18,13 @@ class UsersController < ApplicationController
     end
   end
   
-  def edit
-    @user = User.edit  
-  end
+   def edit
+    @user = User.find(params[:id])  #この行を追加
+   end
+   
+   
+
+  
   
 
   private
