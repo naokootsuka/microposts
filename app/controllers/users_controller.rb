@@ -17,6 +17,11 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+    @user = User.edit  
+  end
+  
 
   private
 
