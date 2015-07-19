@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy] #追加
   resources :microposts #追加
+  resources :relationships, only: [:create, :destroy] #追加
 end
  
