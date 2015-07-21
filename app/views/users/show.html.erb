@@ -4,6 +4,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <p><%= link_to "Update Profile", [:edit, @user] %></p>
       </h1>
     </section>
   </aside>
