@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' #追加
   post   'login'   => 'sessions#create' #追加
   delete 'logout'  => 'sessions#destroy' #追加
-  get    'update'   => 'users#edit' #追加
-  post   'update'   => 'users#update' #追加
-  
+ 
   resources :users
   resources :sessions, only: [:new, :create, :destroy] #追加
   resources :microposts #追加
