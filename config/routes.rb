@@ -7,24 +7,17 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create' #追加
   delete 'logout'  => 'sessions#destroy' #追加
   
-  resources :users do
-    member do
-    get :following
-    end
-  end
-
-  resources :users do
-    member do
+  resources :users do member do
+    get :following 
     get :follower
     end
   end
 
     
- 
   resources :users
   resources :sessions, only: [:new, :create, :destroy] #追加
   resources :microposts #追加
   resources :relationships, only: [:create, :destroy] #追加
   
+
 end
- 
