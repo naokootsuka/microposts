@@ -9,9 +9,21 @@
       <p><%= link_to "update my profile", [:edit, @user] %></p>
     </section>
     <section>
-        <span style="color: green">email : <%= @user.email %></span>
-        <span style="color: green">profile test: <%= @user.profile %></span>
-        <span style="color: green">area : <%= @user.area %></span>
+        <span style="color: purple">email : <%= @user.email %></span>
+        <span style="color: purple">profile : <%= @user.profile %></span>
+        <span style="color: purple">area : <%= @user.area %></span>
+    </section>
+    <section>
+        <p><button class: "btn btn-default">
+          <%= link_to 'my followings', [:following, @user] %>
+          <% if @followings.any? %>(<%= @followings.count %>)
+          <% end %>
+        </button></p>
+        <p><button class: "btn btn-default">
+          <%= link_to 'my followers', [:follower, @user] %>
+          <% if @followers.any? %>(<%= @followers.count %>)
+          <% end %>
+        </button></p>
     </section>
   </aside>
   <div class="col-md-8">

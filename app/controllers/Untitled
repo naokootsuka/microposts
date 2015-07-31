@@ -1,0 +1,29 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info", "rows=20">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      </br>
+      <p><%= link_to "update my profile", [:edit, @user] %></p>
+    </section>
+    <section>
+        <span style="color: green">email : <%= @user.email %></span>
+        <span style="color: green">profile : <%= @user.profile %></span>
+        <span style="color: green">area : <%= @user.area %></span>
+    </section>
+    <section>
+      <p><%= link_to "my followings", {:controller => "users", :action => "index", :id => @user.id} %></p>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+ <% if @followings.any? %>
+  <h1>My followings(<%= @followings.count %>)</h1>
+    <% @followings.each do |f| %>
+    <div class="row">
+      <%= gravatar_for f, size: 60 %>
+      <%= link_to f.name, f %></br>
+      <%= f.profile %></br>
+      <%= f.area %>
+      </br>
+     </div>
+    <% end %>  
+ <% end %>
+
+
+
+

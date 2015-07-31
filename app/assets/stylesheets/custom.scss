@@ -169,7 +169,7 @@ aside {
     display: block;
     margin-left: 60px;
   }
-  .gravatar {
+   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
@@ -190,3 +190,11 @@ span.picture {
   }
 }
 
+/* following */
+
+.row
+  .gravatar {
+  margin-top: 10px;
+}
+  
+  
