@@ -2,8 +2,12 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    
     <%= form_for @user , :url => {:action => 'update'} do |f| %>
 
+    <%= f.label :image, "My Photo" %>
+    <%= f.file_field :image %>
+    
     <%= f.label :name %>
     <%= f.text_field :name %>
 
@@ -15,6 +19,10 @@
 
     <%= f.label :area, "地域" %>
     <%= f.text_field :area %>
+    
+    
+    
+    
       
       <%= f.submit "Update my Profile", class: "btn btn-large btn-primary" %>
     <% end %>
